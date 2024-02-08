@@ -1,16 +1,22 @@
-import { useState } from "react"
+import { FormEvent, useState } from "react"
+import { useNavigate } from "react-router-dom"
+
 
 function Login() {
   
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('') 
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate() 
+  
 
+  const handleChange = ({target}: FormEvent<HTMLInputElement>) => {
+    target.name === 'email' ? setEmail(target.value) : setPassword(target.value)
+  }
 
-  const handleChange = ({target}) => {
-    target.name === 'email' ? setEmail(target.value) : setPassword(target.value) 
-    console.log(email,password);
-    
-    
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    navigate('/todolist')
+
   }
 
   return(
@@ -34,7 +40,7 @@ function Login() {
         onChange={handleChange}
         />
       </p>
-      <button>Entrar</button>
+      <button onClick={handleSubmit}>Entrar</button>
     </form>
     </>
   )

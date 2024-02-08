@@ -1,7 +1,11 @@
+import { useContext } from "react"
+import Context from "../context/Context"
+
 function ToDoList() {
+  const {user} = useContext(Context)
   return (
     <>
-    <h1>todolist page</h1>
+    <h1>Welcome, {user}</h1>
     </>
   )
 }

@@ -1,12 +1,13 @@
-import { FormEvent, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { FormEvent, useContext, useState } from "react"
+import Context from "../context/Context"
 
 
 function Login() {
   
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate() 
+  const { Onlogin  } = useContext(Context) 
+
   
 
   const handleChange = ({target}: FormEvent<HTMLInputElement>) => {
@@ -15,8 +16,8 @@ function Login() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    navigate('/todolist')
-
+    Onlogin(email)
+    
   }
 
   return(

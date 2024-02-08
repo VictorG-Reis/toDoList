@@ -1,33 +1,37 @@
 import { useState } from "react";
-import Context from './Context'
+import Context from "./Context";
 import { useNavigate } from "react-router-dom";
 
-
 type ProviderProps = {
-  children: React.ReactNode
+    children: React.ReactNode
 }
 
-function Provider({children}: ProviderProps) {
-  const [user, setUser] = useState('')
-  const [toDos, setToDos] = useState('')
-  const navigate = useNavigate()
-
-  const Onlogin = (email: string) => {
-    setUser(email)
-    navigate('/todolist')
-  }
-
-  const values = {
-    Onlogin,
-    toDos,
-    user
-  }
-
-  return (
-    <Context.Provider value={values}>
-      {children}
-    </Context.Provider>
-  )
+export type ProviderValues = {
+    onLogin: (email: string) => void,
+    todos: string[],
+    user: string
 }
 
-export default Provider
+function Provider({ children }: ProviderProps) {
+    const navigate = useNavigate();
+    const [user, setUser] = useState("");
+    const [todos, setTodos] = useState([]);
+
+    const onLogin = (email: string) => {
+        setUser(email);
+        navigate("/todolist");
+    };
+
+    const values: ProviderValues = {
+        onLogin,
+        todos,
+        user
+    };
+
+    return (
+        <Context.Provider value={values}>
+            {children}
+        </Context.Provider>);
+}
+
+export default Provider;

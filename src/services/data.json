@@ -1,28 +1,8 @@
 {
   "todos": [
     {
-      "id": "4",
-      "value": "estudar Java",
-      "checked": false
-    },
-    {
-      "id": "5",
-      "value": "estudar Android",
-      "checked": false
-    },
-    {
-      "value": "debugar o check",
-      "checked": false,
-      "id": "7"
-    },
-    {
-      "id": "f81b",
-      "value": "estudar spring",
-      "checked": false
-    },
-    {
-      "id": "5887",
-      "value": "estudar typescript",
+      "id": "4a4a",
+      "value": "text",
       "checked": false
     }
   ]

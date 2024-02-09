@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react"
 import Context from "../context/Context"
-import { Todo, deleteTodo } from "../services/toDoApi"
+import { Todo } from "../services/toDoApi"
 import { useNavigate } from "react-router-dom"
 
 
 
 function ToDoList() {
-  const {user, loading, todos, getTodos, editCheckToDo} = useContext(Context)
+  const {user, loading, todos, getTodos, editCheckToDo, deleteTodos} = useContext(Context)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function ToDoList() {
   }
 
   const handleDelete = (item: Todo) => {
-    deleteTodo(item.id)
+    deleteTodos(item)
   }
 
 

@@ -73,8 +73,12 @@ function Provider({ children }: ProviderProps) {
         setLoading(true)
         setTodos(deleteItem)
         setLoading(false)
-        await deleteTodo(item.id)
+        await handleDeleteTodo(item.id)
     }
+
+    const handleDeleteTodo = async (id: number) => {
+    await deleteTodo(id)
+}
 
     // test delele
 

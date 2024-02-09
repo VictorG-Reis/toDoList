@@ -1,26 +1,6 @@
 {
   "todos": [
     {
-      "id": "1",
-      "value": "estudar react",
-      "checked": true
-    },
-    {
-      "id": "2",
-      "value": "estudar node",
-      "checked": true
-    },
-    {
-      "id": "3",
-      "value": "estudar python",
-      "checked": true
-    },
-    {
-      "id": "6",
-      "value": "estudar C#",
-      "checked": true
-    },
-    {
       "id": "4",
       "value": "estudar Java",
       "checked": false
@@ -34,6 +14,16 @@
       "value": "debugar o check",
       "checked": false,
       "id": "7"
+    },
+    {
+      "id": "f81b",
+      "value": "estudar spring",
+      "checked": false
+    },
+    {
+      "id": "5887",
+      "value": "estudar typescript",
+      "checked": false
     }
   ]
 }

@@ -4,7 +4,7 @@ import Context from "../context/Context"
 
 function Login() {
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [, setPassword] = useState('')
   const { onLogin  } = useContext(Context) 
 
 
@@ -15,7 +15,6 @@ function Login() {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     onLogin(email)
-    
   }
 
   return(

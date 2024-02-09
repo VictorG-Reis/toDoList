@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Context from "./Context";
 import { useNavigate } from "react-router-dom";
-import { Todo, todosApi, updateTodo } from "../services/toDoApi";
+import { Todo, todosApi, updateTodo, addTodo, deleteTodo } from "../services/toDoApi";
 
 type ProviderProps = {
     children: React.ReactNode
@@ -9,11 +9,14 @@ type ProviderProps = {
 
 export type ProviderValues = {
     onLogin: (email: string) => void,
+    getTodos: () => Promise<void>,
+    editCheckToDo: (todoCheck: Todo) => Promise<void>
+    addTodos: (task: string) => Promise<void>
+    deleteTodos: (item: Todo) => Promise<void>
     todos: Todo[],
     user: string
-    getTodos: () => Promise<void>,
     loading: boolean
-    editCheckToDo: (todoCheck: Todo) => Promise<void>
+
 }
 
 function Provider({ children }: ProviderProps) {
@@ -22,10 +25,10 @@ function Provider({ children }: ProviderProps) {
     const [todos, setTodos] = useState([] as Todo[]);
     const [loading, setLoading] = useState(false)
 
-    const onLogin = (email: string) => {
+    const onLogin = useCallback((email: string) => {
         setUser(email);
         navigate("/todolist");
-    };
+    }, [setUser, navigate]) 
 
 
     const getTodos = async () => {
@@ -52,17 +55,39 @@ function Provider({ children }: ProviderProps) {
         setTodos(editCheck)
         setLoading(false)
         await updateTodo(todoCheck)
-    }   
+    }
 
+    const addTodos = async (task: string) => {
+        try {
+            const addTask = await addTodo(task);
+            setTodos([...todos, addTask]);
+            navigate('/todolist')
+        } catch (error) {
+            throw new Error('erro')
+        }
+    }
 
-    const values: ProviderValues = {
+    // // test delele
+    const deleteTodos = async (item: Todo) => {
+        const deleteItem = todos.filter((todo) => todo.id !== item.id)
+        setLoading(true)
+        setTodos(deleteItem)
+        setLoading(false)
+        await deleteTodo(item.id)
+    }
+
+    // test delele
+
+    const values: ProviderValues = useMemo(() => ({
         onLogin,
         todos,
         user,
         getTodos,
         loading,
         editCheckToDo,
-    };
+        addTodos,
+        deleteTodos
+    }),[todos, user]) 
 
     return (
         <Context.Provider value={values}>

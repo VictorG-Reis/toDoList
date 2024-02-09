@@ -18,7 +18,7 @@ export async function todosApi(): Promise<Todo[]> {
     }
 }
 
-export async function addTodo(todo: Todo) {
+export async function addTodo(todo: string) {
     const response = await fetch(`${URL}/todos`, {
         method: 'POST',
         headers: {
@@ -44,3 +44,19 @@ export async function updateTodo(todo: Todo) {
     });
     return response.json();
 }
+
+// test delele
+export async function deleteTodo(id: number) {
+    try {
+        const response = await fetch(`${URL}/todos/${id}`, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error('Erro ao excluir tarefa');
+        }
+    } catch (e: any) {
+        console.log(e.message);
+        alert('Serviço indisponível');
+    }
+}
+// test delele

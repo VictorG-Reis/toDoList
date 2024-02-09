@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const URL = 'http://localhost:3000';
+const URL = 'http://localhost:8000';
 
 export type Todo = {
     id: number,

@@ -66,8 +66,6 @@ function Provider({ children }: ProviderProps) {
             throw new Error('erro')
         }
     }
-
-    // // test delele
     const deleteTodos = async (item: Todo) => {
         const deleteItem = todos.filter((todo) => todo.id !== item.id)
         setLoading(true)
@@ -80,7 +78,6 @@ function Provider({ children }: ProviderProps) {
     await deleteTodo(id)
 }
 
-    // test delele
 
     const values: ProviderValues = useMemo(() => ({
         onLogin,

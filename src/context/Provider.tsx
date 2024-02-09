@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Context from "./Context";
 import { useNavigate } from "react-router-dom";
-import { Todo, todosApi } from "../services/toDoApi";
+import { Todo, todosApi, updateTodo } from "../services/toDoApi";
 
 type ProviderProps = {
     children: React.ReactNode
@@ -13,6 +13,7 @@ export type ProviderValues = {
     user: string
     getTodos: () => Promise<void>,
     loading: boolean
+    editCheckToDo: (todoCheck: Todo) => Promise<void>
 }
 
 function Provider({ children }: ProviderProps) {
@@ -40,13 +41,27 @@ function Provider({ children }: ProviderProps) {
         }
     }
 
+    const editCheckToDo = async (todoCheck: Todo) => {
+        const editCheck = todos.map((todo) => {
+            if(todo.id === todoCheck.id) {
+                todo.checked = todoCheck.checked
+            }
+            return todo
+        })
+        setLoading(true)
+        setTodos(editCheck)
+        setLoading(false)
+        await updateTodo(todoCheck)
+    }   
+
 
     const values: ProviderValues = {
         onLogin,
         todos,
         user,
         getTodos,
-        loading
+        loading,
+        editCheckToDo,
     };
 
     return (

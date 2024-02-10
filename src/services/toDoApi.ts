@@ -45,7 +45,6 @@ export async function updateTodo(todo: Todo) {
     return response.json();
 }
 
-// test delele
 export async function deleteTodo(id: number) {
     try {
         const response = await fetch(`${URL}/todos/${id}`, {
@@ -59,4 +58,3 @@ export async function deleteTodo(id: number) {
         alert('Serviço indisponível');
     }
 }
-// test delele

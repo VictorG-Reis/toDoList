@@ -1,0 +1,9 @@
+.LoginContainer {
+}
+.title {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+  font-weight: 500;
+  align-items: center;
+}

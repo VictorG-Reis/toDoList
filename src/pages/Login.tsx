@@ -1,15 +1,16 @@
 import { ChangeEvent, FormEvent, useContext, useState } from "react"
 import Context from "../context/Context"
+import styles from './Login.module.css'
+import img from '../img/image.svg'
 
 
 function Login() {
   const [email, setEmail] = useState('')
-  const [, setPassword] = useState('')
   const { onLogin  } = useContext(Context) 
 
 
   const handleChange = ({target}: ChangeEvent<HTMLInputElement>) => {
-    target.name === 'email' ? setEmail(target.value) : setPassword(target.value)
+    setEmail(target.value)
   }
 
   const handleSubmit = (event: FormEvent) => {
@@ -19,27 +20,29 @@ function Login() {
 
   return(
     <>
-      <h1>pagina de Login</h1>
+    <div className={styles.LoginContainer}> 
+      <div className={styles.title}>
+        <h1>pagina de Login</h1>
+      </div> 
 
-    <form onSubmit={handleSubmit}>
-      <p>
-        <input
-        type="text"
-        name="email"
-        id="email" 
-        onChange={handleChange}/>
-      </p>
+      <div>
+        <img src={img} alt="homen"  />
+      </div>
 
-      <p>
-        <input 
-        type="password" 
-        name="password" 
-        id="password"
-        onChange={handleChange}
-        />
-      </p>
-      <button >Entrar</button>
-    </form>
+      <div>
+      <form onSubmit={handleSubmit}>
+        <p>
+          <input
+          type="text"
+          name="email"
+          id="email" 
+          placeholder="Insira seu nome"
+          onChange={handleChange}/>
+        </p>
+        <button >Entrar</button>
+      </form>
+      </div>
+    </div>
     </>
   )
 }

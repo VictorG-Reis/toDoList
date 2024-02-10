@@ -22,7 +22,7 @@ function Login() {
     <>
     <div className={styles.LoginContainer}> 
       <div className={styles.title}>
-        <h1>pagina de Login</h1>
+        <h1>Seja bem vindo</h1>
       </div> 
 
       <div>
@@ -31,15 +31,16 @@ function Login() {
 
       <div>
       <form onSubmit={handleSubmit}>
-        <p>
+        <p className={styles.input}>
           <input
           type="text"
           name="email"
           id="email" 
           placeholder="Insira seu nome"
-          onChange={handleChange}/>
+          onChange={handleChange}
+          />
         </p>
-        <button >Entrar</button>
+        <button className={styles.button} >Entrar</button>
       </form>
       </div>
     </div>

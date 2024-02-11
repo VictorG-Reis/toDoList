@@ -2,6 +2,9 @@ import { useContext, useEffect } from "react"
 import Context from "../context/Context"
 import { Todo } from "../services/toDoApi"
 import { useNavigate } from "react-router-dom"
+import image from '../img/todolistImage.svg'
+
+import styles from './ToDoList.module.css'
 
 
 
@@ -24,25 +27,33 @@ function ToDoList() {
 
 
   return (
-    <>
-    <h1>Welcome, {user} </h1>
+    <div className={styles.toDoContainer}>
+      <h1>Welcome, {user} </h1>
 
-    <button onClick={() => navigate("/addtodo")}>adicionar tarefa</button>
-    {loading ? <p>'carregando dados'</p> : 
-        todos.map((todo) => { 
-          return <li key={todo.id} > 
-            <input type="checkbox" 
-              id="checkbox"
-              onChange={() => handleChecked(todo)}
-              value={todo.value} 
-              checked={todo.checked} 
-              />
-            {todo.value}
-            <button onClick={() => handleDelete(todo)}>deletar</button>
-          </li>
-        })
-    }
-    </>
+      <div>
+        <img src={image} alt="image da pagina de todo"  />
+      </div>
+
+      <button className={styles.addTaskButton} onClick={() => navigate("/addtodo")}>Adicionar tarefa</button>
+
+      <div className={styles.tasks}>
+
+        {loading ? <p>'carregando dados'</p> : 
+            todos.map((todo) => { 
+              return <li key={todo.id} > 
+                <input type="checkbox" 
+                  id="checkbox"
+                  onChange={() => handleChecked(todo)}
+                  value={todo.value} 
+                  checked={todo.checked} 
+                  />
+                {todo.value}
+                <button className={styles.trashButton} onClick={() => handleDelete(todo)}><i className="las la-trash"></i></button>
+              </li>
+            })
+        }
+      </div>
+    </div>
   )
 }
 

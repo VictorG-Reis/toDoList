@@ -1,5 +1,7 @@
 import { ChangeEvent, FormEvent, useContext, useState } from "react"
 import Context from "../context/Context"
+import image from '../img/addTodoImage.svg'
+import styles from './AddToDo.module.css'
 
 function AddToDo() {
 
@@ -18,17 +20,20 @@ function AddToDo() {
 
 
   return(
-    <>
-    <h1>welcome, {user}</h1>
+    <div className={styles.addToDoConteiner}>
+      <h1>welcome, {user}</h1>
 
-    <form onSubmit={handleSubmit}>
-      <p>adicione uma tarefa</p>
-      <input type="text" name="task" id="task" onChange={handleChange} />
+      <div>
+        <img src={image} alt="image" />
+      </div>
 
-      <button>adicionar na lista</button>
+      <form onSubmit={handleSubmit}>
+        <p>O que você deseja fazer mais tarde..</p>
+        <input type="text" placeholder="Adicione a tarefa" name="task" id="task" onChange={handleChange} />
+        <button>adicionar na lista</button>
+      </form>
 
-    </form>
-    </>
+    </div>
   )
 }
 

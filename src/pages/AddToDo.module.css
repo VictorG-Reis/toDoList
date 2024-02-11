@@ -1,0 +1,58 @@
+.addToDoConteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.addToDoConteiner h1 {
+  color: black;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.addToDoConteiner p {
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #55847af7;
+}
+
+.addToDoConteiner form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addToDoConteiner input {
+  width: 340px;
+  height: 47px;
+  border-radius: 11px;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+::placeholder {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19.5px;
+  text-align: center;
+}
+
+.addToDoConteiner button {
+  width: 220px;
+  height: 44px;
+  background-color: #55847af7;
+  color: white;
+}

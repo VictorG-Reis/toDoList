@@ -34,7 +34,7 @@ function ToDoList() {
         <img src={image} alt="image da pagina de todo"  />
       </div>
 
-      <button className={styles.addTaskButton} onClick={() => navigate("/addtodo")}>Adicionar tarefa</button>
+      <button className={styles.addTaskButton} onClick={() => navigate("/addtodo")}>Adicionar uma nova tarefa</button>
 
       <div className={styles.tasks}>
 

@@ -5,7 +5,7 @@ import styles from './AddToDo.module.css'
 
 function AddToDo() {
 
-  const {user, addTodos} = useContext(Context)
+  const { addTodos} = useContext(Context)
   
   const [task, setTask] = useState('')
 
@@ -21,7 +21,7 @@ function AddToDo() {
 
   return(
     <div className={styles.addToDoConteiner}>
-      <h1>welcome, {user}</h1>
+      <h1>Adicione aqui sua nova tarefa</h1>
 
       <div>
         <img src={image} alt="image" />

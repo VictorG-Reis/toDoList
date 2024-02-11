@@ -28,7 +28,7 @@ function ToDoList() {
 
   return (
     <div className={styles.toDoContainer}>
-      <h1>Welcome, {user} </h1>
+      <h1>Bem vindo, {user} </h1>
 
       <div>
         <img src={image} alt="image da pagina de todo"  />

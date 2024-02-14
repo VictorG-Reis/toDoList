@@ -4,9 +4,6 @@
 
 Para executar a aplicação, siga as etapas abaixo:
 
-Autores
-Seu Nome - Trabalho inicial - Seu Github
-Veja também a lista de contribuintes que participaram no projeto.
 
 ## Instalação
 

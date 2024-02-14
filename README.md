@@ -1,6 +1,10 @@
 # To Do List com React JS e TypeScript
 ## Este é um projeto de lista de tarefas simples e bonito construído com React JS e TypeScript.
 
+A To Do List com React JS e TypeScript é uma aplicação web que permite aos usuários criar, visualizar, editar e excluir itens da lista de tarefas. O projeto é construído com as tecnologias ReactJS e TypeScript, que oferecem alta performance, facilidade de manutenção e uma tipagem estática, permitindo a detecção de erros em tempo de desenvolvimento.
+
+A aplicação utiliza um design responsivo, permitindo que ela seja acessada em diferentes dispositivos, como computadores e celulares. Além disso, a aplicação vem com uma interface simples e fácil de usar, permitindo que os usuários se familiarizem rapidamente com a mesma.
+
 
 Para executar a aplicação, siga as etapas abaixo:
 

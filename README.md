@@ -15,12 +15,12 @@ Instale To-Do-list com npm
 
 Abra um terminal e execute o comando:
 ```bash
-git clone https://github.com/seunome/todo-list-react-typescript.git
+git clone https://github.com/VictorG-Reis/toDoList.git
 ```
 Navegue até o diretório do projeto:
 
 ```bash
-    cd todo-list-react-typescript
+    cd todolist
 ```
 
 Instale as dependências:

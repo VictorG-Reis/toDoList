@@ -1,12 +1,8 @@
 # To Do List com React JS e TypeScript
 ## Este é um projeto de lista de tarefas simples e bonito construído com React JS e TypeScript.
 
-Como executar a aplicação
+
 Para executar a aplicação, siga as etapas abaixo:
-
-
-Contribuição
-Por favor, leia CONTRIBUTING.md para obter informações sobre nosso código de conduta e o processo para enviar pull requests.
 
 Autores
 Seu Nome - Trabalho inicial - Seu Github

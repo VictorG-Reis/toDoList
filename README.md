@@ -38,7 +38,7 @@ Em um terminal separado, execute o backend:
     npm run backend
 ```
 
-Acesse a aplicação em seu navegador em http://localhost:8000
+Acesse a aplicação em seu navegador em http://localhost:5173
 
 
     
